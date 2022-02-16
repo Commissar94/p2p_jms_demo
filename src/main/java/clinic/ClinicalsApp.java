@@ -16,7 +16,7 @@ public class ClinicalsApp {
         Queue replyQueue = (Queue) initialContext.lookup("queue/replyQueue");
 
         try (ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
-             JMSContext context = connectionFactory.createContext()) {
+             JMSContext context = connectionFactory.createContext("clinicaluser","clinicalpass")) {
 
             /*
             Отправляем сообщение-объект (пациента)

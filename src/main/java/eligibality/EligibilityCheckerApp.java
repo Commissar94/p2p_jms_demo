@@ -13,7 +13,7 @@ public class EligibilityCheckerApp {
         Queue requestQueue = (Queue) initialContext.lookup("queue/requestQueue");
 
         try (ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
-             JMSContext context = connectionFactory.createContext()) {
+             JMSContext context = connectionFactory.createContext("eligibilityuser","eligibilitypass")) {
 
             /*
             Это приложение запускаем первым, а потом ClinicalApp
